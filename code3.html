@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+      body {
+        background: url(./images/contact-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+     }
+     #show {
+       width: 300px;
+       height: 40px;
+       border: 2px solid white;
+       color: white;
+       font-weight: bold;
+       text-align: center;
+       padding: 5px;
+     }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container mt-5">
+        <h1 class="display-1 text-white text-center mb-4">Cofe Shope</h1>
+        <table class="table table-bordered text-white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Cofes</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Cofe 1</td>
+              <td>RS:100</td>
+              <td><input type="text" class="form-control" id="qunty1"></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Cofe 2</td>
+              <td>RS:120</td>
+              <td><input type="text" class="form-control" id="qunty2"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Cofe 3</td>
+              <td>RS:150</td>
+              <td><input type="text" class="form-control" id="qunty3"></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Cofe 4</td>
+              <td>RS:200</td>
+              <td><input type="text" class="form-control" id="qunty4"></td>
+            </tr>
+          </tbody>
+        </table>
+        <button onclick="shope()" type="button" class="btn btn-lg btn-primary">Total Bill</button>
+        <div id="show"></div>
+        <br>
+        <button onclick="submit()" type="button" class="btn btn-lg btn-info">Order submit</button>
+
+      </div>
+    
+      <script>
+        function shope() {
+          var input1 = parseInt(document.getElementById("qunty1").value);
+          var input2 = parseInt(document.getElementById("qunty2").value);
+          var input3 = parseInt(document.getElementById("qunty3").value);
+          var input4 = parseInt(document.getElementById("qunty4").value);
+          var total = (input1*100) + (input2*120) + (input3*150) + (input4*200);
+          document.getElementById('show').innerHTML = "Your total cast is " +total;
+        }
+        function submit() {
+          alert("Your order is submit.");
+        }
+      </script>
+  </body>
+</html>

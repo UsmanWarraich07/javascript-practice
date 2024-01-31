@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Simple Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-5 align-items-center">
+      <h1 class="display-2 text-primary text-center">Sample Calculator</h1>
+        <div class="form-group">
+          <label>Enter Number 1</label>
+          <input type="text" class="form-control" id="num1" aria-describedby="emailHelp" placeholder="Enter number1">
+        </div>
+        <div class="form-group">
+          <label>Enter number 2</label>
+          <input type="text" class="form-control" id="num2" placeholder="Enter number2">
+        </div>
+        
+        <button onclick="add()" type="submit" class="btn btn-primary btn-lg">+</button>
+        <button onclick="sub()" type="submit" class="btn btn-info btn-lg">-</button>
+        <button onclick="mul()" type="submit" class="btn btn-danger btn-lg">*</button>
+        <button onclick="div()" type="submit" class="btn btn-success btn-lg">/</button>
+        <button onclick="mol()" type="submit" class="btn btn-dark btn-lg">%</button>
+        <div>
+          <label class="mt-2">See Results</label>
+          <div class="alert alert-primary"  id="result"> </div>
+        </div>
+   
+    </div>
+    <script>
+      // function 1
+      function add() {
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        var add = num1 + num2;
+        document.getElementById("result").innerHTML = "The sum is " + add;
+      }
+      // function 2
+      function sub() {
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        var sub = num1 - num2;
+        document.getElementById("result").innerHTML = "The subtract is " + sub;
+      }
+      // function 3
+      function mul() {
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        var mul = num1 * num2;
+        document.getElementById("result").innerHTML = "The multipcation is " + mul;
+      }
+      // function 4
+      function div() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var div = num1 / num2;
+        document.getElementById("result").innerHTML = "The dvision is " + div;
+      }
+       // function 5
+       function mol() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var div = num1 % num2;
+        document.getElementById("result").innerHTML = "The modulas is " + div;
+      }
+    </script>
+   
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    #calculator {
+      width: 500px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+
+    }
+    .calc-row {
+        display: flex;
+    }
+    input {
+      width: 470px;
+      margin-bottom: 30px;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #abd2ab;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 48%;
+      padding: 10px;
+      font-size: 16px;
+      margin: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: #ddd;
+    }
+    button:hover {
+        background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="calculator">
+    <input type="text" id="display" disabled>
+    <div class="calc-row">
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button style="background-color: cadetblue;" onclick="appendToDisplay('+')">+</button>
+    </div>
+    <div class="calc-row">
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button style="background-color: chocolate;" onclick="appendToDisplay('-')">-</button>
+    </div>
+    <div class="calc-row">
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button style="background-color: deepskyblue;" onclick="appendToDisplay('*')">*</button>
+    </div>
+    <div class="calc-row">
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button style="background-color: rgb(205, 5, 5);" onclick="clearDisplay()">C</button>
+        <button style="background-color: rgb(229, 225, 4);" onclick="appendToDisplay('/')">/</button>
+    </div>
+    <button style="width: 490px; background-color: chartreuse;" onclick="calculate()">=</button>
+  </div>
+
+  <script>
+    function appendToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      try {
+        document.getElementById('display').value = eval(document.getElementById('display').value);
+      } catch (error) {
+        document.getElementById('display').value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>

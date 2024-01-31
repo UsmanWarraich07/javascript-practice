@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Enter your user name or phone 
+  <input type="text" id="name">
+  <br>
+  Enter your password
+  <input type="password" id="pwd">
+  <br>
+  <button onclick="login()">Login</button>
+
+  <script>
+    function login() {
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("pwd").value;
+      if (name == "admin123" || phone == "12345" && password == "pny123") {
+        alert("your login successfull");
+      }
+      else {
+        alert("plese enter right name or password");
+      }
+    }
+  </script>
+</body>
+</html>
